@@ -1,0 +1,24 @@
+#将数字转化为字符串
+def NumToStr(num):
+
+	def NumToDigital(num):          #将数字转化为单个数字放入list中,此时为倒序放入
+		digital=[]
+		while num!=0:
+			digital.append(num%10)
+			num=int(num/10)
+		return digital
+		
+	def DigitalToStr(digitalTemp):      #将单个数字通过累加转化为字符串
+		str_temp=''
+		for i in digitalTemp:
+			str_temp=str_temp+str(i)
+		return str_temp
+    
+	def StrCovert(str_temp2):     #将字符串倒序
+		str2=str_temp2[::-1]
+		return str2
+
+	return StrCovert(DigitalToStr(NumToDigital(num)))
+ 
+ 
+ 
